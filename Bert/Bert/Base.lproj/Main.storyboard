@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="oho-4g-8RJ">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="Bert" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pGi-Xv-hL1">
+                                <rect key="frame" x="239" y="240" width="122" height="30"/>
+                                <state key="normal" title="Show in web view"/>
+                                <connections>
+                                    <segue destination="OyB-wb-tUo" kind="show" identifier="showInWebView" id="QKW-fb-TQz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xdB-gb-YoV">
+                                <rect key="frame" x="200" y="285" width="200" height="30"/>
+                                <state key="normal" title="Show in safari view controller"/>
+                                <connections>
+                                    <action selector="showInSafariViewController:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vDE-2z-UhU"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="26g-GE-GgO">
+                                <rect key="frame" x="15" y="40" width="570" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bGH-8G-t30">
+                                <rect key="frame" x="253" y="330" width="95" height="30"/>
+                                <state key="normal" title="Open in safari"/>
+                                <connections>
+                                    <action selector="openInSafari:" destination="BYZ-38-t0r" eventType="touchUpInside" id="E93-du-woV"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xdB-gb-YoV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BSe-KY-a5m"/>
+                            <constraint firstItem="26g-GE-GgO" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="G3C-hb-uAC"/>
+                            <constraint firstAttribute="trailing" secondItem="26g-GE-GgO" secondAttribute="trailing" constant="15" id="Gqh-ik-Ka0"/>
+                            <constraint firstItem="bGH-8G-t30" firstAttribute="top" secondItem="xdB-gb-YoV" secondAttribute="bottom" constant="15" id="UcV-Qk-ob3"/>
+                            <constraint firstItem="xdB-gb-YoV" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="XL9-t9-vq8"/>
+                            <constraint firstItem="26g-GE-GgO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="15" id="dgc-kp-S0g"/>
+                            <constraint firstItem="bGH-8G-t30" firstAttribute="centerX" secondItem="xdB-gb-YoV" secondAttribute="centerX" id="lTB-Ff-PxL"/>
+                            <constraint firstItem="pGi-Xv-hL1" firstAttribute="top" relation="greaterThanOrEqual" secondItem="26g-GE-GgO" secondAttribute="bottom" constant="5" id="npm-xl-yUh"/>
+                            <constraint firstItem="xdB-gb-YoV" firstAttribute="top" secondItem="pGi-Xv-hL1" secondAttribute="bottom" constant="15" id="pr3-8l-kIL"/>
+                            <constraint firstItem="pGi-Xv-hL1" firstAttribute="centerX" secondItem="xdB-gb-YoV" secondAttribute="centerX" id="zNr-Xb-vnn"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="1JW-Mh-G5b"/>
+                    <connections>
+                        <outlet property="urlFied" destination="26g-GE-GgO" id="vt6-Wi-Lf4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1151" y="301"/>
+        </scene>
+        <!--Web View View Controller-->
+        <scene sceneID="2K6-xV-iXb">
+            <objects>
+                <viewController id="OyB-wb-tUo" customClass="WebViewViewController" customModule="Bert" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NWI-CQ-ml4"/>
+                        <viewControllerLayoutGuide type="bottom" id="kfg-Sf-NGR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JW2-7O-Ton">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Abh-Xc-syY">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Abh-Xc-syY" firstAttribute="leading" secondItem="JW2-7O-Ton" secondAttribute="leading" id="HkZ-na-Cbm"/>
+                            <constraint firstItem="kfg-Sf-NGR" firstAttribute="top" secondItem="Abh-Xc-syY" secondAttribute="bottom" id="UJ2-vH-vlT"/>
+                            <constraint firstAttribute="trailing" secondItem="Abh-Xc-syY" secondAttribute="trailing" id="cqN-Jg-tUK"/>
+                            <constraint firstItem="Abh-Xc-syY" firstAttribute="top" secondItem="JW2-7O-Ton" secondAttribute="top" id="vUT-be-W5v"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="Abh-Xc-syY" id="g7Z-8f-IIn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FwH-Aj-oZR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1945" y="301"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="31S-qk-uRT">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="oho-4g-8RJ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ejT-63-NqB">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="KGD-Gx-ztl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IMB-Qw-ehY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="339" y="301"/>
+        </scene>
+    </scenes>
+</document>
